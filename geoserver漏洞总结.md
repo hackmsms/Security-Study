@@ -437,7 +437,7 @@ Content-Length: 44
 
 # CVE-2024-34696(信息泄漏)
 
-漏洞url：[http://ip:8080/geoserver/rest/about/status](http://38.207.178.98:8080/geoserver/rest/about/status)
+漏洞url：[http://ip:8080/geoserver/rest/about/status](http://ip:8080/geoserver/rest/about/status)
 
 泄露环境变量和系统信息
 
